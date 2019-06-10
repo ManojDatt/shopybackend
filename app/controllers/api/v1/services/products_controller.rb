@@ -16,8 +16,9 @@ class Api::V1::Services::ProductsController < ApplicationController
 	end
 
 	def search_products
-		@products = Product.search(name_cont: params[:q], model_cont: params[:q], make_year_eq: params[:q], m: 'or')
-		@results = @products.result(distinct: true).paginate(page: params[:page], per_page: 25)
+		t = Product.arel_table
+		@products = Product.where(t[:name].eq(params[:q]).or(t[:model].matches("%#{params[:q]}%")))
+		@results = @products.paginate(page: params[:page], per_page: 25)
 		render json: {
 			message: "Product list fetched !!", 
 			code: 200, 
