@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  ram_size: MyString
+  external_storage: MyString
+  raw_details: MyString
+  model: MyString
+  brand: MyString
+  year: MyString
+  cost_price: 1.5
+  selling_price: 1.5
+
+two:
+  name: MyString
+  ram_size: MyString
+  external_storage: MyString
+  raw_details: MyString
+  model: MyString
+  brand: MyString
+  year: MyString
+  cost_price: 1.5
+  selling_price: 1.5
